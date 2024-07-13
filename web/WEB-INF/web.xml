@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>controller.UploadServlet</servlet-class>
+        <multipart-config>
+        <max-file-size>1048576</max-file-size> <!-- 1MB -->
+        <max-request-size>2097152</max-request-size> <!-- 2MB -->
+        <file-size-threshold>512000</file-size-threshold> <!-- 500KB -->
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
